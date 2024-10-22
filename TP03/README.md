@@ -1,12 +1,11 @@
-# Introduction
 ## Spring Data JPA
-Spring Data JPA simplifie l'accès aux bases de données en offrant une abstraction au-dessus de JPA. Il permet de créer des interfaces de repositories pour effectuer des opérations CRUD sans écrire de code SQL. Cela facilite la gestion des données et améliore la productivité.
+Spring Data JPA simplifies database access by providing an abstraction layer on top of JPA. It allows developers to create repository interfaces to perform CRUD operations without writing SQL code, making data management easier and boosting productivity.
 
 ## Hibernate
-Hibernate est une implémentation de JPA qui assure le mapping objet-relationnel (ORM). Il permet de mapper des objets Java à des tables de base de données, générant automatiquement les requêtes SQL. Hibernate gère aussi les transactions et le cache des données.
+Hibernate is a JPA implementation that handles object-relational mapping (ORM). It maps Java objects to database tables, automatically generating the necessary SQL queries. Hibernate also manages transactions and data caching, improving performance and consistency.
 
-## Services dans Spring Boot
-Les services, contiennent la logique métier d'une application. Ils interagissent avec les repositories pour manipuler les données et isolent la logique métier des autres couches comme les contrôleurs ou les repositories.
+## Services in Spring Boot
+Services contain the business logic of an application. They interact with repositories to handle data manipulation and keep the business logic separate from other layers, such as controllers and repositories.
 
 # Project Structure
 <img src="./screenshots/structure.png"/>
