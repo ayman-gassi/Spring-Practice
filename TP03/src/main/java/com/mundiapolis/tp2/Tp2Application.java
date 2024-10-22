@@ -21,49 +21,5 @@ public class Tp2Application implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        // Add products
-       /* productRepository.save(new Product(null,"Game of thrones",500,5));
-        productRepository.save(new Product(null,"Prison Break",500,5));
-        productRepository.save(new Product(null,"Breaking bad",500,5)); */
-
-        // Select all products
-        List<Product> products = productRepository.findAll();
-        products.forEach(elm-> {
-            System.out.println(elm);
-        });
-
-        System.out.println("************************************************");
-
-        // Select One product
-       /* Product product = productRepository.findById(Long.valueOf(1)).get();
-        System.out.println(product.toString()); */
-
-        // Select  products that contain the keyword
-        /* List<Product> FiltredProduts = productRepository.findByNameContains("game");
-        System.out.println(FiltredProduts.toString()); */
-
-          /* List<Product> FiltredProdutsV2 = productRepository.search("game");
-        System.out.println(FiltredProdutsV2.toString()); */
-
-        System.out.println("************************************************");
-
-        // Select  products with price greather then 100
-        /*List<Product> FiltredProdutsByPrice = productRepository.findByPriceGreaterThan(100);
-        FiltredProdutsByPrice.forEach(elm-> {
-            System.out.println(elm);
-        });*/
-
-          /*List<Product> FiltredProdutsByPriceV2 = productRepository.searchGreather(100);
-        FiltredProdutsByPriceV2.forEach(elm-> {
-            System.out.println(elm);
-        });*/
-
-        System.out.println("************************************************");
-
-
-
-
-
-
     }
 }
