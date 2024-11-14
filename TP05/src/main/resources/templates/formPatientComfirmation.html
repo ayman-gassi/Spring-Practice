@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Mundiapolis</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<div class="max-w-lg w-full bg-white rounded-lg shadow-md p-6">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2">Patient Created</h2>
+
+  <div class="space-y-4">
+    <div class="flex justify-between">
+      <span class="text-gray-700 font-medium">ID:</span>
+      <span class="text-gray-900" th:text="${patient.id}"></span>
+    </div>
+
+    <div class="flex justify-between">
+      <span class="text-gray-700 font-medium">Full Name:</span>
+      <span class="text-gray-900" th:text="${patient.nom}"></span>
+    </div>
+
+    <div class="flex justify-between">
+      <span class="text-gray-700 font-medium">Email:</span>
+      <span class="text-gray-900" th:text="${patient.email}"></span>
+    </div>
+
+    <div class="flex justify-between">
+      <span class="text-gray-700 font-medium">Birthday:</span>
+      <span class="text-gray-900" th:text="${patient.dateNaissance}"></span>
+    </div>
+
+    <div class="flex justify-between">
+      <span class="text-gray-700 font-medium">Sick:</span>
+      <span class="text-gray-900" th:text="${patient.malade}"></span>
+    </div>
+
+    <div class="flex justify-between">
+      <span class="text-gray-700 font-medium">Score:</span>
+      <span class="text-gray-900" th:text="${patient.score}"></span>
+    </div>
+    <div class="flex justify-center">
+      <a class="p-3 w-full bg-gray-700 text-center rounded-md hover:bg-gray-800 text-white" th:href="@{/patients}" >
+        Back To Home
+      </a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Mundiapolis</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout" >
 <body class="bg-gray-100 text-gray-800">
-<div class="container mx-auto p-4">
+<div layout:fragment="content" class="container mx-auto p-4">
     <form method="get" th:action="@{patients}" >
         <label class="block w-full text-gray-700 font-semibold mb-2">Search for a patient</label>
             <input
@@ -30,6 +27,7 @@
         <tr>
             <th class="py-2 px-4 border-b border-gray-300 text-left">ID</th>
             <th class="py-2 px-4 border-b border-gray-300 text-left">Full Name</th>
+            <th class="py-2 px-4 border-b border-gray-300 text-left">Email</th>
             <th class="py-2 px-4 border-b border-gray-300 text-left">Birthday</th>
             <th class="py-2 px-4 border-b border-gray-300 text-left">Sick</th>
             <th class="py-2 px-4 border-b border-gray-300 text-left">Score</th>
@@ -40,11 +38,13 @@
         <tr th:each="p : ${allPatients}" class="hover:bg-gray-100 pt-2 pb-2 transition duration-200">
             <td class="py-2 px-4 border-b border-gray-300" th:text="${p.id}"></td>
             <td class="py-2 px-4 border-b border-gray-300" th:text="${p.nom}"></td>
+            <td class="py-2 px-4 border-b border-gray-300" th:text="${p.email}"></td>
             <td class="py-2 px-4 border-b border-gray-300" th:text="${p.dateNaissance}"></td>
             <td class="py-2 px-4 border-b border-gray-300" th:text="${p.malade}"></td>
             <td class="py-2 px-4 border-b border-gray-300" th:text="${p.score}"></td>
             <td class="py-2 px-4 border-b border-gray-300">
-                <a onclick="confirm('are you sure ?')"  class="py-2 px-1 rounded-md bg-red-500 text-white" th:href="@{patients/delete(id=${p.id} , word=${word} , page = ${currentPage})}"> Delete </a>
+                <a onclick="confirm('are you sure ?')"  class=" p-1 py-1 px-1 rounded-md bg-red-500 text-white" th:href="@{patients/delete(id=${p.id} , word=${word} , page = ${currentPage})}"> Delete </a>
+                <a class="ml-4 p-1 py-1 px-3 rounded-md bg-green-500 text-white" th:href="@{patients/edit(id=${p.id})}"> Edit </a>
             </td>
         </tr>
         </tbody>

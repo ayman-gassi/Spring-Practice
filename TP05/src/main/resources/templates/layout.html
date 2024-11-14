@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Mundiapolis</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col">
+<header>
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a th:href="@{/patients}" class="text-white text-xl font-semibold">Mundiapolis</a>
+            <div class="space-x-4">
+                <a href="/Patients" th:href="@{/patients}" class="text-gray-300 hover:text-white">Patients</a>
+                <a href="/Patients/form" th:href="@{/patients/form}" class="text-gray-300 hover:text-white">Add Patient</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<section  layout:fragment="content" >
+
+</section>
+
+
+</body>
+</html>
